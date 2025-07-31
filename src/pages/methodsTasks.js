@@ -17,9 +17,9 @@ let unsubscribeTasks = null; //Similar to useEffect listener needs to be created
 
 //Initializes real-time tasks listener for a specific user
 export const initTasks = (uid, callback) => {
-  // Clean up previous subscription if exists
+  
   if (unsubscribeTasks) {
-    unsubscribeTasks();
+    unsubscribeTasks(); // Clean up previous subscription if exists only if it had anything inside it
   }
 
   // Create query for user's tasks, ordered by creation date also It include the UID and description the query is the thing which is use to create a collection in a firebase base
