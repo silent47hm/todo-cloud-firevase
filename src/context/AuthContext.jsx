@@ -11,7 +11,8 @@ export const AuthProvider = ({ children }) => {
   const [authLoading, setAuthLoading] = useState(true); // Loading flag while checking session
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+    const unsubscribe = onAuthStateChanged(
+      auth, (firebaseUser) => {
       setUser(firebaseUser);
       setAuthLoading(false);
     });

@@ -57,7 +57,10 @@ export const useTasks = () => {
     await updateDoc(taskRef, {
       isCompleted: !task.isCompleted,
     });
+    console.log(task.id,"Is going to be edited");
+    
   };
+  
 
   // Delete task
   const deleteTask = async (task) => {
